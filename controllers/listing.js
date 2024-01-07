@@ -12,7 +12,7 @@ module.exports.index = async(req, res) => {
 };
 
 module.exports.renderNewForm = (req, res) => {
-    res.render("Listings/new.ejs");
+    res.render("./listings/new.ejs");
 };
 
 module.exports.showListing = async (req, res) => {
@@ -68,7 +68,7 @@ module.exports.renderEditForm = async(req, res) => {
 
     let originalImageUrl = listing.image.url;  //here we are saving the original image url and then decreasing their quality and then passing it back to edit.ejs
     originalImageUrl = originalImageUrl.replace("/upload","/upload/h_300,w_250");
-    res.render("./Listings/edit.ejs",{listing, originalImageUrl});
+    res.render("./listings/edit.ejs",{listing, originalImageUrl});
 };
 
 module.exports.updateListing = async(req, res) => {
