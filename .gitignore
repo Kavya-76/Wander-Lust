@@ -1,0 +1,4 @@
+# the files written in this file will not be pushed to git
+.env
+node_modules/
+**/.DS_Store

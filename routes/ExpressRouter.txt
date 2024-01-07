@@ -1,0 +1,7 @@
+<!-- Express Routers are a way to organize your Express application such that our 
+     primary app.js file does not become bloated.
+
+Syntax:
+    const router = express.Router()   // creates new router object -->
+
+<!-- It is not  necessary to use but it is only used so that our program looks more clean -->

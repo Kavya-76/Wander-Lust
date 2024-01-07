@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <!-- Here the classes used like form-label, form-control, mb-3 are all bootstrap classes-->
+    <div class="row">
+        <!-- Whenever we make a row then it has 12 columns -->
+        <!-- Here we have given col-8 which means that our form will occupy only 8 columns and so it will have less width -->
+        <div class="col-8 offset-2"><br> <!-- offset means the space from left --> 
+            <h2>Create a New Listing</h2>
+            <form method="POST" action="/Listings" novalidate class="needs-validation" enctype="multipart/form-data">  <!--Here class="needs-validation and novalidate are bootstrap classes that means the information added must be necessary that checks the validation of the form-->
+                <!-- also we have used enctype to make our to store other data types like images -->
+                <div class="mb-3">                 <!--The novalidate will remove all the default implementations of the browser so that we can apply custom implementations-->
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" placeholder="Enter Title" class="form-control" required>
+                    <div class="valid-feedback">Title Looks Good!!!</div>
+                    <div class="invalid-feedback">Please enter a valid title</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" id="" cols="30" rows="10" placeholder="Enter description" class="form-control" required></textarea>
+                    <div class="invalid-feedback">Write something about your listing</div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" name="listing[image]" placeholder="Upload listing image" class="form-control" required><br>
+                </div>
+                <div class="row">
+                    <!-- Here we have taken price and country in the same row and then we have assigned only 4columns to price and 6columns to country  and md means that when size is md or greater than that then only these properties will follow-->
+                    <div class="mb-3 col-md-6">  
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" placeholder="Enter price" class="form-control" required>
+                        <div class="invalid-feedback">Please Enter a valid price</div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" placeholder="Enter country name" class="form-control" required>
+                        <div class="invalid-feedback">Country name should be valid</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" name="listing[location]" placeholder="Enter the location" class="form-control" required>
+                    <div class="invalid-feedback">Location should be valid</div>
+                </div>
+                <button class="btn btn-dark add-btn">Add Listing</button><br><br><br>   <!--Here btn is a default class from bootstrap-->
+                <!-- as we have linked this file with boilerplatee.ejs so all the bootstrap properties will be applied to it as well-->
+            </form>
+        </div>
+    </div>
+</body>
+<!-- Here we have given names as listing[]  so that we can can access all the values using a single  array  listing[] -->
+
+<!-- we are using the bootstrap classes valid feedback and invalid feedback to display a message when we are entering valid/invlalid information -->

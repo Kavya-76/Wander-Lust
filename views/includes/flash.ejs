@@ -1,0 +1,15 @@
+<% if(success && success.length) { %>      <!-- we have given the above condition as we have to display alert only when a new listing is created that is when there is something in the success array ie its length must be greater than 0-->
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert"><!-- column 6 offset 3 -->
+        <%= success %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        </button>
+    </div>
+<% } %>
+
+<% if(error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert"><!-- column 6 offset 3 -->
+        <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        </button>
+    </div>
+<% } %>
